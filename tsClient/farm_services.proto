@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service CropMonitor {
+  rpc GetCropData (CropRequest) returns (CropResponse);
+}
+
+message CropRequest {
+  string crop_name = 1;
+}
+
+message CropResponse {
+  string crop_data = 1;
+}

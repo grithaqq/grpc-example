@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package farmtech;
+
+service CropMonitor {
+  rpc GetMoistureLevel (CropRequest) returns (MoistureResponse) {}
+}
+
+service WeatherStation {
+  rpc GetWeatherForecast (ForecastRequest) returns (ForecastResponse) {}
+}
+
+message CropRequest {
+  string crop_id = 1;
+}
+
+message MoistureResponse {
+  float moisture_level = 1;
+}
+
+message ForecastRequest {
+  string date = 1;
+}
+
+message ForecastResponse {
+  float temperature = 1;
+  float humidity = 2;
+  string conditions = 3;
+}
